@@ -53,7 +53,9 @@ const ceramic = new CeramicClient("https://ceramic-clay.3boxlabs.com")
 ```
 ### DID
 If you are developing an App and you have to connect a blockchain wallet, maybe the 3ID Connect is what you want.
+
 3ID Connect is an in-browser 3ID DID provider, using blockchain wallets to create deterministic authentication secrets using to control a DID.
+
 Using 3ID Connect, web apps do not need to take care of key custody directly, but rather to use an authentication provider such as EthereumAuthProvider to allow 3ID Connect to generate the necessarry authentication secrets.
 #### installation
 ```sh
