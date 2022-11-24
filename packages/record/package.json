@@ -1,0 +1,28 @@
+{
+  "name": "linkfeed-record",
+  "version": "1.0.15",
+  "description": "",
+  "main": "lib/index.js",
+  "type": "module",
+  "scripts": {
+    "test": " exit 0",
+    "build": "tsc"
+  },
+  "author": "Dugubuyan",
+  "license": "MIT",
+  "dependencies": {
+    "@3id/connect": "^0.4.1",
+    "@ceramicnetwork/3id-did-resolver": "^2.6.0",
+    "@ceramicnetwork/http-client": "^2.7.0",
+    "@glazed/datamodel": "^0.3.1",
+    "@glazed/did-datastore": "^0.3.2",
+    "@glazed/did-datastore-model": "^0.2.0",
+    "@glazed/tile-loader": "^0.2.1",
+    "@glazed/types": "^0.2.0",
+    "dids": "^3.4.0",
+    "ipfs-core-types": "^0.13.0",
+    "uuid": "^9.0.0",
+    "key-did-provider-ed25519": "^2.0.1",
+    "key-did-resolver": "^2.3.0"
+  }
+}

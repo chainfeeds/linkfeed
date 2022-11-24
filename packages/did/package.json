@@ -1,0 +1,28 @@
+{
+  "name": "linkfeed-did",
+  "version": "1.0.8",
+  "description": "",
+  "main": "src/index.js",
+  "directories": {
+    "test": "test"
+  },
+  "type": "module",
+  "scripts": {
+    "build": "tsc"
+  },
+  "keywords": [
+    "did",
+    "linkfeed"
+  ],
+  "author": "Dugubuyan",
+  "license": "MIT",
+  "dependencies": {
+    "@stablelib/random": "^1.0.2",
+    "dids": "^3.4.0",
+    "key-did-provider-ed25519": "^2.0.1",
+    "key-did-resolver": "^2.3.0"
+  },
+  "devDependencies": {
+    "uint8arrays": "^4.0.2"
+  }
+}
