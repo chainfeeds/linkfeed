@@ -3,12 +3,13 @@ record operations
 ## Installation
 
 ```sh
-npm install likefeed/record
+npm install linkfeed/record
 ```
 
 ## Example
 How to create a record class? 
 ```ts
+import  Record  from 'linkfeed/record'
 // the ceramic is optional, if not be set, we would use Testnet node 
 const rec = new Record({did: did, ceramic: ceramic})
 // first, we should anthenticate the did
