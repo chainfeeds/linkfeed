@@ -3,7 +3,7 @@ record operations
 ## Installation
 
 ```sh
-npm install linkfeed/record
+npm install linkfeed-record
 ```
 
 ## Example
