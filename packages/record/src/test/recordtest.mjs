@@ -21,7 +21,7 @@ async function　newRecord(){
     return rec
 }
 async function createItem(rec){
-    let item = {"title":"my title555","source_url":"url"}
+    let item = {"title":"my title555","source_url":"url","tags":["",""]}
     await rec.create(item)
     item = {"title":"my title666","source_url":"url"}
     await rec.create(item)

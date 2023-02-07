@@ -4,7 +4,7 @@ import { DID } from 'dids'
 import { DataModel } from '@glazed/datamodel'
 import { DIDDataStore } from '@glazed/did-datastore'
 import {v4 as uuidv4} from 'uuid'
-const modelAliases = {"definitions":{"collect":"kjzl6cwe1jw147yeaalxixzvq5jovo5820ri7fukrb1tg0l8xacjg6o9vch3cvx","users":"kjzl6cwe1jw145wzthep9fmjozm41iv1a4j5zsfnbagonnu9xrrz7n2m0oc61nd"},"schemas":{"record":"ceramic://k3y52l7qbv1fry9coozhzdyrjzojkrraxp9r2o95x8ase64e0ax76hgsh9ks9g5j4","standard":"ceramic://k3y52l7qbv1fryqurr08i8t5x9ifqwt5fea9lpg0kerr0xsmpots20d8tbode3t34"},"tiles":{}}
+const modelAliases = {"definitions":{"collect":"kjzl6cwe1jw148ht2a6d4gqkepi23gnjdu21apy8l95jqva2tgblwn3tjs8adfu"},"schemas":{"record":"ceramic://k3y52l7qbv1fry3s00zrosvom1dchn96nshgmv3jskfut0kv4vhi1vhns5ms513b4","standard nothing":"ceramic://k3y52l7qbv1fryqurr08i8t5x9ifqwt5fea9lpg0kerr0xsmpots20d8tbode3t34"},"tiles":{}}
 
 export type RecordParams = {
     /**
@@ -20,11 +20,11 @@ export type RecordParams = {
  * this schema is defined in linkfeed data model
  * this schema is like below:
  * ```
- * {"$schema":"http://json-schema.org/draft-07/schema#","title":"chainfdFeed","type":"object","properties":{"title":{"type":"string","title":"title"},"abstract":{"type":"string","title":"abstract"},"author_name":{"type":"string","title":"abstract"},"source_url":{"type":"string","title":"source_url","maxLength":1024},"show_time":{"type":"string","title":"show_time"},"uuid":{"type":"string","title":"uuid","maxLength":120}},"required":["uuid","title","source_url"]}
+ * {"$schema":"http://json-schema.org/draft-07/schema#","title":"LinkFeed","type":"object","properties":{"title":{"type":"string","title":"title"},"description":{"type":"string","title":"description"},"source_url":{"type":"string","title":"source_url","maxLength":2048},"uuid":{"type":"string","title":"uuid","maxLength":120},"state":{"type":"string","title":"state","maxLength":20},"tags":{"type":"array","items":{"type":"string","maxLength":256},"uniqueItems":true}},"required":["uuid","source_url"]}
  * ```
  * recordSchemaId is the id of the schema
  */
-const recordSchemaId='k3y52l7qbv1fry9coozhzdyrjzojkrraxp9r2o95x8ase64e0ax76hgsh9ks9g5j4'
+const recordSchemaId='k3y52l7qbv1fry3s00zrosvom1dchn96nshgmv3jskfut0kv4vhi1vhns5ms513b4'
 /**
  * @module record
  */
@@ -95,12 +95,10 @@ export default class Record {
         // The stream ID of the created document can then be accessed as the `id` property
         console.log("record is successfully created,the id is " , doc.id.toString())
         const content = {}
-        // content.set(item.uuid, doc.id.toString())
-        // console.log(content.toString())
         content[item.uuid] = doc.id.toString()
         await store.merge('collect', content)
-        const repos = await store.get('collect')
-        console.log("now , the collect table is :" , repos)
+        // const repos = await store.get('collect')
+        // console.log("now , the collect table is :" , repos)
     }
 
     /**
